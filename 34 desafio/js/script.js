@@ -1,5 +1,8 @@
 function meuEscopoLocal() {
     const formulario = document.querySelector('.formulario');
+    const resultado = document.querySelector('.resultado');
+
+    const pessoas = [];
    /* 
     formulario.onsubmit = function (evento) {
         evento.preventDefault();
@@ -14,7 +17,14 @@ function meuEscopoLocal() {
         const peso = formulario.querySelector('.peso');
         const altura = formulario.querySelector('.altura');
         
-        console.log(nome.value, sobrenome.value, peso.value, altura.value);
+        pessoas.push({
+            nome: nome.value,
+            sobrenome: sobrenome.value,
+            peso: peso.value,
+            altura: altura.value
+        });
+        console.log(pessoas);
+        resultado.innerHTML += `<p>${nome.value}, ${sobrenome.value}, ${peso.value} ,${altura.value}</p>`;
     }
 
     formulario.addEventListener('submit', recebeEventoForm);
