@@ -3,12 +3,7 @@ function meuEscopoLocal() {
     const resultado = document.querySelector('.resultado');
 
     const pessoas = [];
-   /* 
-    formulario.onsubmit = function (evento) {
-        evento.preventDefault();
-        console.log('preveniu do padrão que seria mostrar a mensagem somente por milésimos de segundo.')      //essa é a primeira maneira.//
-    };  
-    */ 
+
     function recebeEventoForm(evento) {
         evento.preventDefault();   
 
@@ -23,11 +18,12 @@ function meuEscopoLocal() {
             peso: peso.value,
             altura: altura.value
         });
+
         console.log(pessoas);
-        resultado.innerHTML += `<p>${nome.value}, ${sobrenome.value}, ${peso.value} ,${altura.value}</p>`;
+
+        resultado.innerHTML += `<p>${nome.value} ${sobrenome.value} ${peso.value} ${altura.value}</p>`;
     }
 
-    formulario.addEventListener('submit', recebeEventoForm);
-     
+    formulario.addEventListener('submit', recebeEventoForm);    
 }
 meuEscopoLocal();
